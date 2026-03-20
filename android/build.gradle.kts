@@ -13,7 +13,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:8.11.1")
+        classpath("com.android.tools.build:gradle:8.12.1")
     }
 }
 
@@ -52,5 +52,5 @@ android {
 }
 
 dependencies {
-
+    implementation("androidx.appcompat:appcompat:1.6.1")
 }
