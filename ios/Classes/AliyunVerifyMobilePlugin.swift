@@ -21,8 +21,9 @@ public class AliyunVerifyMobilePlugin: NSObject, FlutterPlugin {
       
       if(method == "setAuthSDKInfo"){
           let secretInfo = (call.arguments as! Dictionary<String, Any>)["secretInfo"] as! String
-          TXCommonHandler.sharedInstance().setAuthSDKInfo(secretInfo)
-          result(true)
+          TXCommonHandler.sharedInstance().setAuthSDKInfo(secretInfo) { data in
+              result(true)
+          }
       }else if(method == "getVerifyToken"){
           let totalTimeout = (call.arguments as! Dictionary<String, Any>)["totalTimeout"] as! Int
           TXCommonHandler.sharedInstance().getVerifyToken(withTimeout: TimeInterval(totalTimeout),complete: {result in
